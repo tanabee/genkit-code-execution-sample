@@ -26,6 +26,7 @@ export const mainFlow = defineFlow(
       prompt,
       config: {
         temperature: 1,
+        codeExecution: true,
       },
     });
     return llmResponse.text();
