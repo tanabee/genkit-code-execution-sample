@@ -53,20 +53,26 @@ Flow メニューから実装した Flow を選択します。
 まず、以下のプロンプトをリクエストしてみます。
 「10万回コインを投げて、表が出た回数の割合をシミュレートしてください。」
 
-[img]()
+![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*qqyeDF60_GE2Y_ntPRjiXw.png)
 
 View Trace を選択すると実際にコードが実行されたことがわかります。
+
+![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*NaSGnWP_oqb1BqwcKqT-FQ.png)
 
 次に、より直接的なリクエストをしてみます。
 「Python で以下のコードを実行してください: print('Hello World') 」
 
-[img]()
+![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*pA1v6q9eZsjaR81tunACEQ.png)
 
 先ほどと同様、View Trace を選択すると実際にコードが実行されたことがわかります。
 
+![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*aqJn741yiEKkgvxNGmccfw.png)
+
 最後に、コードとは関係のない一般的なリクエストをしてみます。
 
-[img]()
+![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*vysgv83KHrKqMcJDRnqzmQ.png)
+
+![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*v5rRRb8XVE3W5iTyqn9C_w.png)
 
 すると、コードの実行がされていないことがわかります。これは、Code Execution が tools の 1 つの選択肢として指定されているためです。生成 AI は必要な場合にしか Code Execution を実行しません。
 

@@ -53,20 +53,26 @@ Select the implemented Flow from the Flow menu.
 First, let's try requesting the following prompt:
 "Simulate the ratio of heads to tails after flipping a coin 100,000 times."
 
-[img]()
+![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*qqyeDF60_GE2Y_ntPRjiXw.png)
 
-By selecting View Trace, you can see that the code has actually been executed.
+By selecting View trace, you can see that the code has actually been executed.
+
+![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*NaSGnWP_oqb1BqwcKqT-FQ.png)
 
 Next, let's try a more direct request:
 "Execute the following code in Python: print('Hello World')"
 
-[img]()
+![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*pA1v6q9eZsjaR81tunACEQ.png)
 
 As with the previous request, selecting View Trace shows that the code has been executed.
 
+![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*aqJn741yiEKkgvxNGmccfw.png)
+
 Finally, let's try a general request unrelated to code.
 
-[img]()
+![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*vysgv83KHrKqMcJDRnqzmQ.png)
+
+![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*v5rRRb8XVE3W5iTyqn9C_w.png)
 
 You can see that no code was executed. This is because Code Execution is specified as one of the tool options, and the generative AI only executes Code Execution when necessary.
 
