@@ -1,36 +1,19 @@
-import * as z from 'zod';
+import { genkit, z } from 'genkit'
+import { googleAI, gemini15Flash } from '@genkit-ai/googleai'
+import { logger } from 'genkit/logging'
+logger.setLogLevel('debug')
 
-import { generate } from '@genkit-ai/ai';
-import { configureGenkit } from '@genkit-ai/core';
-import { defineFlow, startFlowsServer } from '@genkit-ai/flow';
-import { googleAI } from '@genkit-ai/googleai';
-import { gemini15Flash } from '@genkit-ai/googleai';
+const ai = genkit({
+  plugins: [googleAI()],
+  model: gemini15Flash.withConfig({ codeExecution: true }),
+})
 
-configureGenkit({
-  plugins: [
-    googleAI(),
-  ],
-  logLevel: 'debug',
-  enableTracingAndMetrics: true,
-});
+const mainFlow = ai.defineFlow({
+  name: 'mainFlow',
+  inputSchema: z.string(),
+}, async (input) => {
+  const { text } = await ai.generate(input)
+  return text
+})
 
-export const mainFlow = defineFlow(
-  {
-    name: 'mainFlow',
-    inputSchema: z.string(),
-    outputSchema: z.string(),
-  },
-  async (prompt) => {
-    const llmResponse = await generate({
-      model: gemini15Flash,
-      prompt,
-      config: {
-        temperature: 1,
-        codeExecution: true,
-      },
-    });
-    return llmResponse.text();
-  }
-);
-
-startFlowsServer();
+ai.startFlowServer({ flows: [mainFlow] })
